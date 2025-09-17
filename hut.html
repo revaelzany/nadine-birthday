@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Nadine 🎂</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #FDF8E2;
+            scroll-behavior: smooth;
+        }
+
+        /* Utility Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Section 1: Hello */
+        .hello-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #C4C3E3 0%, #504E76 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hello-text {
+            font-size: 8rem;
+            font-weight: 700;
+            letter-spacing: 10px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hello-subtitle {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 50px;
+            font-size: 1rem;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* Section 2: Birth Date */
+        .birth-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #A3B565;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .birth-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .birth-date {
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #FDF8E2;
+        }
+
+        .birth-year {
+            font-size: 6rem;
+            font-weight: 700;
+            color: #FCDD9D;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .birth-message {
+            font-size: 1.3rem;
+            margin-top: 30px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* Section 3: Childhood Photo */
+        .childhood-section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #FDF8E2;
+            padding: 50px 20px;
+        }
+
+        .childhood-container {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .childhood-title {
+            font-size: 3rem;
+            color: #504E76;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .childhood-photo {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid #C4C3E3;
+            box-shadow: 0 20px 60px rgba(80,78,118,0.3);
+        }
+
+        .childhood-caption {
+            font-size: 1.2rem;
+            color: #504E76;
+            margin-top: 30px;
+            font-style: italic;
+        }
+
+        /* Section 4: Our Wish */
+        .wish-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #F1642E 0%, #FCDD9D 100%);
+            padding: 80px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wish-container {
+            max-width: 1000px;
+            text-align: center;
+            color: white;
+        }
+
+        .wish-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .wish-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 50px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .wish-text {
+            font-size: 1.4rem;
+            line-height: 2;
+            margin-bottom: 30px;
+        }
+
+        .wish-from {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #FDF8E2;
+            margin-top: 40px;
+        }
+
+        /* Section 5: Dojijae Story */
+        .story-section {
+            min-height: 100vh;
+            background: #504E76;
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .story-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-title {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: #C4C3E3;
+        }
+
+        .story-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 60px;
+            opacity: 0.9;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin: 0 30px;
+            border: 3px solid #A3B565;
+        }
+
+        .timeline-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            text-align: right;
+        }
+
+        .timeline-date {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #FCDD9D;
+            margin-bottom: 15px;
+        }
+
+        .timeline-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Section 6: Memories Gallery */
+        .gallery-section {
+            min-height: 100vh;
+            background: #A3B565;
+            padding: 80px 20px;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .gallery-title {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .gallery-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            background: rgba(255,255,255,0.9);
+            color: #504E76;
+            padding: 10px;
+            text-align: center;
+            font-weight: 500;
+            margin-top: -5px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Section 7: Video */
+        .video-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #C4C3E3 0%, #FDF8E2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+        }
+
+        .video-container {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .video-title {
+            font-size: 3rem;
+            color: #504E76;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(80,78,118,0.3);
+            margin: 0 auto;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #504E76;
+        }
+
+        .video-placeholder {
+            color: #504E76;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        /* Final Message */
+        .final-section {
+            min-height: 100vh;
+            background: #504E76;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .final-message {
+            max-width: 800px;
+        }
+
+        .final-title {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            color: #FCDD9D;
+            font-weight: 700;
+        }
+
+        .final-text {
+            font-size: 1.5rem;
+            line-height: 2;
+            margin-bottom: 40px;
+        }
+
+        .final-signature {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #A3B565;
+        }
+
+        .heart {
+            color: #F1642E;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hello-text { font-size: 4rem; }
+            .birth-date { font-size: 2.5rem; }
+            .birth-year { font-size: 4rem; }
+            .childhood-photo { width: 280px; height: 280px; }
+            .timeline-item { flex-direction: column !important; text-align: center !important; }
+            .timeline-photo { margin: 20px 0; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .final-title { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Section 1: Hello -->
+    <section class="hello-section fade-in">
+        <div class="hello-text">WOY NADINE</div>
+        <div class="hello-subtitle">ini jo tu hadiah neh</div>
+        <div class="scroll-hint">↓ SCROLL jangan malas ↓</div>
+    </section>
+
+    <!-- Section 2: Birth Date -->
+    <section class="birth-section fade-in">
+        <div class="birth-card">
+            <div class="birth-date">September 20</div>
+            <div class="birth-year">2006</div>
+            <div class="birth-message">
+                DAY ONE <i>Nadine Thessalonika Lembong</i><br>
+                lahir di DUNIA ini.
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Childhood Photo -->
+    <section class="childhood-section fade-in">
+        <div class="childhood-container">
+            <h2 class="childhood-title">Nadine Kacili</h2>
+            <img src="508170316_23956103370668749_8589948628900700119_n.jpg" alt="Nadine masa kecil" class="childhood-photo">
+            <p class="childhood-caption">nadine masih polos tak berdosa ✨</p>
+        </div>
+    </section>
+
+    <!-- Section 4: Our Wish -->
+    <section class="wish-section fade-in">
+        <div class="wish-container">
+            <h2 class="wish-title">Torang pe DOA for Najis</h2>
+            <div class="wish-card">
+                <div class="wish-text">
+                    <b>from repa (cantik)</b> <br>
+                    i know nn so melewati beberapa fase dalam kehidupan ini yang gedebak gedebuk,
+                    apalagi beberapa tahun ini yakannn. sebenarnya nda banyak yg mo dibilang,
+                    tapi semoga nn terus menjadi pribadi yg selalu bersyukur akan segala hal
+                    yang terjadi in your life, apapun itu. memang nda gampang, but i trust you can do it.
+                    dan jangan pernah berpikir pendek dalam hidup WKWKWKWK.
+                    <br><br>
+                    <b>from gita (hijabers)</b> <br>
+                    nintau apa dia mo isi
+                </div>
+                <div class="wish-from">jangan bilang ALAY, ini TULUS <span class="heart">❤️</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Dojijae Story -->
+    <section class="story-section fade-in">
+        <div class="story-container">
+            <h2 class="story-title">Nadine's Gallery</h2>
+            <p class="story-subtitle">waktu masih kacili, blum ja overthinking</p>
+            
+            <div class="timeline-item">
+                <img src="494510247_9832292606809729_2880790145531629224_n.jpg" alt="Awal Dojijae" class="timeline-photo">
+                <div class="timeline-content">
+                    <div class="timeline-date">LUCUKKKK</div>
+                    <div class="timeline-text">
+                        nintau umur berapa mar pe lucu sx yang ini,
+                        berikut bking anak model bgini plis.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <img src="499933456_9990587400980248_1306971281441461792_n.jpg" alt="Growing Together" class="timeline-photo">
+                <div class="timeline-content">
+                    <div class="timeline-date">Adek TK</div>
+                    <div class="timeline-text">
+                        kasee rata dang tu bedak, btw dpa lia
+                        adek manis-manis kalo disini kang.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <img src="505708991_23916846557927764_795623493087061413_n.jpg" alt="Adventures" class="timeline-photo">
+                <div class="timeline-content">
+                    <div class="timeline-date">Sederhana</div>
+                    <div class="timeline-text">
+                        dari kecil so tabiasa makang tahu serta besar
+                        mo stel makang pizza.
+                        </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <img src="463903660_8671499856222349_6521776632742298873_n.jpg" alt="Kecil1" class="timeline-photo">
+                <div class="timeline-content">
+                    <div class="timeline-date">Muka JAHA</div>
+                    <div class="timeline-text">
+                        memang so dpa lia dpe muka-muka 
+                        tukang julid.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <img src="119514421_3807096959318222_1076817613379207311_n.jpg" alt="Kecil2" class="timeline-photo">
+                <div class="timeline-content">
+                    <div class="timeline-date">Nadine with Mom</div>
+                    <div class="timeline-text">
+                        tanta conny memang sayang sekali pa
+                        nadine, begitu juga nadine AWWWWW.
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <img src="509340381_23995193243426428_3425089419187223527_n.jpg" alt="Kecil3" class="timeline-photo">
+                <div class="timeline-content">
+                    <div class="timeline-date">Mandi Kolam</div>
+                    <div class="timeline-text">
+                        nintau ini deng sapa, mar rupa dpa lia
+                        bahagia tanpa beban eh.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 6: Memories Gallery -->
+    <section class="gallery-section fade-in">
+        <div class="gallery-container">
+            <h2 class="gallery-title">Nadine with Reva and Gita</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="IMG_0359.JPG" alt="Memory 1" class="gallery-photo">
+                    <div class="gallery-caption">foto studio pertama cs</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20211009-WA0014.jpg" alt="Memory 2" class="gallery-photo">
+                    <div class="gallery-caption">belajar bawa motor</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20220903-WA0041.jpg" alt="Memory 3" class="gallery-photo">
+                    <div class="gallery-caption">lucu</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20240511-WA0044.jpg" alt="Memory 4" class="gallery-photo">
+                    <div class="gallery-caption">luley time</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="IMG-20240504-WA0080.jpg" alt="Memory 5" class="gallery-photo">
+                    <div class="gallery-caption">sunset </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="our.jpg" alt="Memory 6" class="gallery-photo">
+                    <div class="gallery-caption">photobooth</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Video -->
+    <section class="video-section fade-in">
+        <div class="video-container">
+            <h2 class="video-title">A Little Something Special</h2>
+            <div class="video-wrapper">
+                <!-- Untuk video local file -->
+                <video controls preload="metadata">
+                    <source src="sulap.mp4" type="video/mp4">
+                    <p style="color: #504E76; padding: 20px; text-align: center;">
+                        Your browser does not support the video tag.<br>
+                        Please check if the video file "sulap.mp4" exists in the same folder as this HTML file.
+                    </p>
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section class="final-section fade-in">
+        <div class="final-message">
+            <h2 class="final-title">Happy 19th Birthday, Nadine!</h2>
+            <p class="final-text">
+                mo ada orang ato nda orang di samping ngana,
+                tetap harus kuat karna ada Tuhan Yesus!
+                <br><br>
+                semoga tahun depan KULIAH, amin.
+            </p>
+            <div class="final-signature">
+                torang deng<br>
+                <strong>Nadine</strong> <span class="heart">💕</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
